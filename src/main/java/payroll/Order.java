@@ -7,7 +7,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import ch.qos.logback.core.status.Status;
 
 @Entity
 @Table(name = "CUSTOMER_ORDER")
