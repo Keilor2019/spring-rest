@@ -1,10 +1,16 @@
-package payroll;
+package com.app.payroll.loaddatabase;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+
+import com.app.payroll.entities.Employee;
+import com.app.payroll.entities.Order;
+import com.app.payroll.entities.Status;
+import com.app.payroll.repositories.EmployeeRepository;
+import com.app.payroll.repositories.OrderRepository;
 
 @Configuration
 class LoadDatabase {
@@ -13,7 +19,7 @@ class LoadDatabase {
 
   @Bean
   CommandLineRunner initDatabase(EmployeeRepository employeeRepository, OrderRepository orderRepository) {
-
+   System.out.println("Corriendo inserciones");
     return args -> {
       employeeRepository.save(new Employee("Bilbo", "Baggins", "burglar"));
       employeeRepository.save(new Employee("Frodo", "Baggins", "thief"));
